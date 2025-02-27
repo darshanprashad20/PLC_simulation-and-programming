@@ -116,4 +116,11 @@ Cons: Complex processes require many rungs, making it bulky.
     Cons: Not ideal for simple logic tasks.
 
 
+Once the logic is written in software it is donwloaded in PLC and then the automation starts.
+
+suppose we have 3 plc A,B,C. PLC A can only be programmed with software A so it is closed PLC. similarly B. while PLC C
+can be porgrammed with software C,D,E it is open PLC.
+In close and classic PLC only specific software is required to write code and it generally use programming language LAD, FBD, ST.
+Whereas in open PLC we can use LAD, FBD etc as well as python and C++.
+
 
