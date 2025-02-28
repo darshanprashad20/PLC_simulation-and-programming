@@ -124,3 +124,35 @@ In close and classic PLC only specific software is required to write code and it
 Whereas in open PLC we can use LAD, FBD etc as well as python and C++.
 
 
+In an OpenPLC scenario, latching and push button behaviors are commonly used in industrial automation for controlling outputs like motors, lights, or relays. Here’s what they mean:
+1. Push Button (Momentary Switch)
+
+A push button is a momentary input device that only stays ON while being pressed. When you release it, it turns OFF immediately.
+Example in OpenPLC:
+
+    Used for start/stop buttons, emergency stops, etc.
+    Typically represented as a normally open (NO) or normally closed (NC) contact in ladder logic.
+
+Ladder Logic Example:
+
+| Start_Button |----[ ]----( ) Motor
+
+Here, the Motor will only be ON as long as Start_Button is pressed.
+2. Latching (Self-Holding Circuit)
+
+A latching circuit holds the state of an output even after the input is released. It requires another action to turn it OFF.
+Example in OpenPLC:
+
+    Used for start/stop controls, where a machine should remain running even after releasing the start button.
+    Implemented using a seal-in (self-holding) contact.
+
+Ladder Logic Example:
+
+| Start_Button |----[ ]----+----( ) Motor
+|              |          |
+| Motor        |----[ ]----+
+| Stop_Button  |----[/]----( ) Motor
+
+
+
+
