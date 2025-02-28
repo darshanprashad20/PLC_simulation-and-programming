@@ -154,5 +154,29 @@ Ladder Logic Example:
 | Stop_Button  |----[/]----( ) Motor
 
 
+In OpenPLC, S_TRIG (Set Trigger) and R_TRIG (Reset Trigger) are function blocks used to detect edge transitions in a signal.
+1️⃣ S_TRIG (Set Trigger) – Rising Edge Detector
+
+    Detects when an input changes from 0 to 1 (LOW to HIGH).
+    Output is true (1) for one scan cycle when a rising edge occurs.
+    After that, the output goes back to false (0) until the next rising edge.
+
+💡 Example Use Case:
+
+    Button Press Detection: If a push button is pressed, you can use S_TRIG to detect the first press event, ensuring that it only triggers once, even if the button remains pressed.
+
+2️⃣ R_TRIG (Reset Trigger) – Falling Edge Detector
+
+    Detects when an input changes from 1 to 0 (HIGH to LOW).
+    Output is true (1) for one scan cycle when a falling edge occurs.
+    After that, the output goes back to false (0) until the next falling edge.
+
+💡 Example Use Case:
+
+    Machine Stop Detection: If a motor turns off, R_TRIG can detect this transition and trigger an alert or safety sequence.
+
+
+
+
 
 
